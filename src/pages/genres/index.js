@@ -51,7 +51,7 @@ export async function getStaticProps() {
   let genres = null;
   try {
     const res = await fetch(
-      `https://api.rawg.io/api/genres?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}`
+      `https://api.rawg.io/api/genres?key=${process.env.RAWG_API_KEY}`
     );
 
     if (res.ok) {

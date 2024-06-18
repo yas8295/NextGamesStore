@@ -1,6 +1,6 @@
 const fetchGame = async (game) => {
   const response = await fetch(
-    `https://api.rawg.io/api/games/${game}?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}`
+    `https://api.rawg.io/api/games/${game}?key=${process.env.RAWG_API_KEY}`
   );
 
   return await response.json();

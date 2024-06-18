@@ -8,7 +8,7 @@ const fetchSimilarGames = async (
 ) => {
   try {
     const response = await fetch(
-      `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}&parent_platforms=${parent_platforms}&tags=${tags}&genres=${genres}&publishers=${publishers}&ordering=-released,-rating,-metacritic`
+      `https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&parent_platforms=${parent_platforms}&tags=${tags}&genres=${genres}&publishers=${publishers}&ordering=-released,-rating,-metacritic`
     );
     return response.json();
   } catch (error) {

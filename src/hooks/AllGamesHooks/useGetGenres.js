@@ -4,7 +4,7 @@ const fetchGenres = async (id) => {
   try {
     const response = await fetch(
       `https://api.rawg.io/api/genres/${String(id)}?key=${
-        process.env.NEXT_PUBLIC_RAWG_API_KEY
+        process.env.RAWG_API_KEY
       }`
     );
     return response.json();

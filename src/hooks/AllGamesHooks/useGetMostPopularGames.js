@@ -5,7 +5,7 @@ const fetchGames = async () => {
   try {
     const response = await fetch(
       `https://api.rawg.io/api/games?key=${
-        process.env.NEXT_PUBLIC_RAWG_API_KEY
+        process.env.RAWG_API_KEY
       }&dates=${getYear(new Date())}-01-01,${getYear(
         new Date()
       )}-12-31&page_size=${5}`

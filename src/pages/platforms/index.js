@@ -52,7 +52,7 @@ export async function getStaticProps() {
   let platforms = null;
   try {
     const res = await fetch(
-      `https://api.rawg.io/api/platforms?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}`
+      `https://api.rawg.io/api/platforms?key=${process.env.RAWG_API_KEY}`
     );
 
     if (res.ok) {

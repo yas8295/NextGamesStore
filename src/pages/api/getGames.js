@@ -10,7 +10,7 @@ const fetchGames = async (
 ) => {
   const res = await fetch(
     `https://api.rawg.io/api/games?key=${
-      process.env.NEXT_PUBLIC_RAWG_API_KEY
+      process.env.RAWG_API_KEY
     }&page=${page}&dates=${date}&ordering=${order}&${
       parentPlatforms && `parent_platforms=${parentPlatforms}`
     }&${platforms && `platforms=${platforms}`}&${

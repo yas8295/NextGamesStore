@@ -6,7 +6,7 @@ const fetchGames = async ({ pageParam = 1 }) => {
   if (pageParam > 4) return;
   try {
     const response = await fetch(
-      `https://api.rawg.io/api/tags?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}&page=${pageParam}`
+      `https://api.rawg.io/api/tags?key=${process.env.RAWG_API_KEY}&page=${pageParam}`
     );
     errorFetch = false;
     return response.json();

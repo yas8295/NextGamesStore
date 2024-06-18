@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
   let games = null;
   try {
     const res = await fetch(
-      `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}&platforms=${params.platform}`
+      `https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&platforms=${params.platform}`
     );
 
     if (res.ok) {

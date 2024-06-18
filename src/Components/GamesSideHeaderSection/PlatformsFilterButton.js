@@ -13,7 +13,7 @@ export default function PlatformsFilterButton({
 
   const getParentPlatformsList = async () => {
     const response = await fetch(
-      `https://api.rawg.io/api/platforms/lists/parents?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}`
+      `https://api.rawg.io/api/platforms/lists/parents?key=${process.env.RAWG_API_KEY}`
     );
     const data = response.json();
     return data;

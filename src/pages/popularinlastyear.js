@@ -17,7 +17,7 @@ export async function getStaticProps() {
   let games = null;
   try {
     const res = await fetch(
-      `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}&dates=${getBestOfLastYear}`
+      `https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&dates=${getBestOfLastYear}`
     );
 
     if (res.ok) {

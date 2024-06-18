@@ -18,7 +18,7 @@ export async function getStaticProps() {
   try {
     const res = await fetch(
       `https://api.rawg.io/api/games?key=${
-        process.env.NEXT_PUBLIC_RAWG_API_KEY
+        process.env.RAWG_API_KEY
       }&dates=${thisMonth(getMonth(new Date()))}`
     );
 
