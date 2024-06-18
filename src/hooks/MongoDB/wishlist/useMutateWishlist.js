@@ -2,6 +2,7 @@ import NotifyGame from "@/Components/GameCard/NotifyGame";
 import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
 import { toast } from "react-toastify";
+import { useSession } from "next-auth/react";
 
 const mutateWishlist = async (game, method) => {
   try {
@@ -21,6 +22,8 @@ const mutateWishlist = async (game, method) => {
 };
 
 export const useMutateWishlist = (setIsWishlist) => {
+const { data: session, status } = useSession();
+
   const { push } = useRouter();
 
   const queryClient = useQueryClient();
@@ -28,7 +31,7 @@ export const useMutateWishlist = (setIsWishlist) => {
   const { mutate, isLoading } = useMutation({
     mutationFn: ({ game, method }) => mutateWishlist(game, method),
     onSuccess: ({ message, game }) => {
-      queryClient.invalidateQueries({ queryKey: "wishlist" });
+      queryClient.invalidateQueries({ queryKey: "wishlist" + session?.user?.email });
       toast.success(() => <NotifyGame message={message} game={game} />);
       setIsWishlist((prev) => (prev ? false : true));
     },
