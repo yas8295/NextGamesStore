@@ -2,6 +2,7 @@ import NotifyGame from "@/Components/GameCard/NotifyGame";
 import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
 import { toast } from "react-toastify";
+import { useSession } from "next-auth/react";
 
 const mutateCart = async (game, method, operation = undefined) => {
   try {
@@ -22,6 +23,8 @@ const mutateCart = async (game, method, operation = undefined) => {
 };
 
 export const useMutateCart = (setIsInCart = undefined) => {
+  const { data: session, status } = useSession();
+
   const { push } = useRouter();
 
   const queryClient = useQueryClient();
@@ -30,7 +33,7 @@ export const useMutateCart = (setIsInCart = undefined) => {
     mutationFn: ({ game, method, operation }) =>
       mutateCart(game, method, operation),
     onSuccess: ({ message, game }) => {
-      queryClient.invalidateQueries({ queryKey: "cart" });
+      queryClient.invalidateQueries({ queryKey: "cart" + session?.user?.email });
       toast.success(() =>
         message === "Cleared cart successfully" ? (
           message
