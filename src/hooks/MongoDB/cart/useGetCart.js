@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 const fetchCart = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/mongodb/cart");
+    const res = await fetch("/api/mongodb/cart");
     return res.json();
   } catch (error) {
     console.log(error);

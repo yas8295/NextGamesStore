@@ -38,7 +38,7 @@ const fetchGames = async (
   metacritic = undefined
 ) => {
   try {
-    const response = await fetch("http://localhost:3000/api/getGames", {
+    const response = await fetch("/api/getGames", {
       method: "POST",
       body: JSON.stringify({
         page: page,

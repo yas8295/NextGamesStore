@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const mutateCart = async (game, method, operation = undefined) => {
   try {
-    const res = await fetch("http://localhost:3000/api/mongodb/cart", {
+    const res = await fetch("/api/mongodb/cart", {
       method: method,
       body: JSON.stringify({
         game,

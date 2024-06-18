@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 
 const fetchOrders = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/mongodb/order");
+    const res = await fetch("/api/mongodb/order");
     return res.json();
   } catch (error) {
     console.log(error);

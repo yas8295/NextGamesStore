@@ -12,7 +12,7 @@ export default function GenresLinks({ open, toggleOpen }) {
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/getGenres");
+        const res = await fetch("/api/getGenres");
         const genres = await res.json();
         setGenres(genres);
       } catch (error) {

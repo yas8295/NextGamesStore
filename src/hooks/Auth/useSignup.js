@@ -6,7 +6,7 @@ let errorMessage = "";
 
 const signup = async (userName, email, password) => {
   try {
-    const res = await fetch("http://localhost:3000/api/auth/signup", {
+    const res = await fetch("/api/auth/signup", {
       method: "POST",
       body: JSON.stringify({ userName, email, password }),
     });

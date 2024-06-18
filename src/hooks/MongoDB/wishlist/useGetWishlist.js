@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 const fetchWishlist = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/mongodb/wishlist");
+    const res = await fetch("/api/mongodb/wishlist");
     return res.json();
   } catch (error) {
     console.log(error);

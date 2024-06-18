@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const mutateOrder = async (order, method) => {
   try {
-    const res = await fetch("http://localhost:3000/api/mongodb/order", {
+    const res = await fetch("/api/mongodb/order", {
       method: method,
       body: JSON.stringify({
         order,

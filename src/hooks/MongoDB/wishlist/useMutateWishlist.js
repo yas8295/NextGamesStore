@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const mutateWishlist = async (game, method) => {
   try {
-    const res = await fetch("http://localhost:3000/api/mongodb/wishlist", {
+    const res = await fetch("/api/mongodb/wishlist", {
       method: method,
       body: JSON.stringify({
         game,
