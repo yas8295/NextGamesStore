@@ -3,7 +3,7 @@ import { useInfiniteQuery } from "react-query";
 const fetchSearchGame = async (page = 1, search) => {
   try {
     const response = await fetch(
-      `https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&page=${page}&search=${search}`
+      `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}&page=${page}&search=${search}`
     );
     return response.json();
   } catch (error) {

@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 const fetchGameDlc = async (id) => {
   try {
     const response = await fetch(
-      `https://api.rawg.io/api/games/${id}/additions?key=${process.env.RAWG_API_KEY}`
+      `https://api.rawg.io/api/games/${id}/additions?key=${process.env.NEXT_PUBLIC_NEXT_PUBLIC_NEXT_PUBLIC_NEXT_PUBLIC_NEXT_PUBLIC_NEXT_PUBLIC_RAWG_API_KEY}`
     );
     return response.json();
   } catch (error) {

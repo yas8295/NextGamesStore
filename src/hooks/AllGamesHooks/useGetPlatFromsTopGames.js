@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 const fetchPlatFromsTopGames = async (id) => {
   try {
     const response = await fetch(
-      `https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&platforms=${id}`
+      `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}&platforms=${id}`
     );
     return response.json();
   } catch (error) {
