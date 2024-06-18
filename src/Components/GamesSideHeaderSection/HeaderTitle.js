@@ -36,7 +36,9 @@ export default function HeaderTitle({ status, titleOfCategory, month }) {
     <h1 className="grow flex items-center flex-wrap gap-3 sm:text-[60px] text-[25px] font-extrabold font-orbitron">
       <div className="text-nowrap w-fit relative before:absolute before:md:top-[10px] before:top-[1px] before:left-0 before:w-[40%] before:h-[4px] before:bg-gradient-to-r before:from-[#119cd7] before:to-[#6a29e8] after:absolute after:md:bottom-[0px] after:bottom-[-12px] after:right-0 after:w-[40%] after:h-[4px] after:bg-gradient-to-r after:from-[#6a29e8] after:to-[#119cd7] md:mt-3 mt-1 mb-3">
         <div className="flex flex-wrap sm:gap-2 gap-[3px]">
-          {!titleOfCategory.includes("undefined") ||
+          {!titleOfCategory.includes("undefined games") ||
+          titleOfCategory !== "undefined games" ||
+          !titleOfCategory.startsWith("undefined") ||
           !titleOfCategory ||
           titleOfCategory.split(" ")[2] !== "undefined" ? (
             titleOfCategory.split("").map((c, i) => (
