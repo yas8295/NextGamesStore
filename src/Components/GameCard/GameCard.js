@@ -28,10 +28,10 @@ export default function GameCard({
 
   return (
     <motion.div
-      initial={{ scale: 0, opacity: 0 }}
+      initial={{ scale: 0.5, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.3 }}
       layout
       className={`p-[1.5px] ${width} grow rounded-[0px_15px] border-[double_1px_transparent] ${
         layOut
