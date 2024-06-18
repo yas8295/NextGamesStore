@@ -31,7 +31,7 @@ export default function GameCard({
       initial={{ scale: 0, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ type: "spring", stiffness: 200, damping: 60 }}
+      transition={{ duration: 0.7 }}
       layout
       className={`p-[1.5px] ${width} grow rounded-[0px_15px] border-[double_1px_transparent] ${
         layOut
