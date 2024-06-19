@@ -6,10 +6,18 @@ import SlideHeading from "../SlideHeading";
 import WishListButton from "@/Components/GameCard/WishListButton";
 import CartButton from "@/Components/GameCard/CartButtons/CartButton";
 import PlatformsIcons from "@/Components/GameCard/PlatformsIcons";
+import Link from "next/link";
+import { HiHome } from "react-icons/hi2";
 
 export default function GameDetails({ game }) {
   return (
     <div className="game-details md:w-[73%] w-full flex flex-col justify-between md:min-h-full h-[86%] md:p-7 px-2 py-5 font-orbitron gap-4 md:rounded-l-3xl rounded-t-3xl overflow-y-auto overflow-x-hidden">
+      <div className="flex items-center md:gap-2 gap-1 md:text-[14px] text-[12px]">
+        <Link href={"/home"}>
+          <HiHome className="opacity-65 hover:opacity-100 duration-200 md:text-[23px] text-[20px]" />
+        </Link>
+        /<h1>{game?.name}</h1>
+      </div>
       <div className="flex justify-between items-center gap-3">
         <h1 className="bg-[#f3f3f3] text-black w-fit px-2 py-[1px] rounded-md text-[12px] font-semibold">
           {format(new Date(game.released), "MMM, dd, yyyy")}
