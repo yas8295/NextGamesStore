@@ -48,7 +48,7 @@ export default function WishlistBadge() {
         count={wishlistGamesCount}
         showZero={true}
         offset={[-5, 2]}
-        className="cursor-pointer"
+        className="md:block hidden cursor-pointer"
       >
         <Avatar
           icon={
