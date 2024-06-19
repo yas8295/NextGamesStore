@@ -38,20 +38,12 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: { game },
-    revalidate: 60,
   };
 };
 
 export const getStaticPaths = async () => {
   return {
-    paths: [
-      { params: { game: "3498" } },
-      { params: { game: "3328" } },
-      { params: { game: "4200" } },
-      { params: { game: "4291" } },
-      { params: { game: "5286" } },
-      { params: { game: "13536" } },
-    ],
+    paths:[ ],
     fallback: true,
   };
 };
