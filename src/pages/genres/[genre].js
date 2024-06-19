@@ -52,7 +52,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { games },
-    revalidate: 60,
+    
   };
 }
 
