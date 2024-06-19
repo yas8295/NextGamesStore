@@ -19,7 +19,7 @@ export default function Navigation({ open, toggleOpen }) {
 
   return (
     <>
-      <div className="flex flex-col gap-3 mt-5 z-[1]">
+      <div className="flex flex-col gap-3 md:mt-5 mt-14 z-[1]">
         <Link
           onClick={() => open && toggleOpen(false)}
           href="/home"
