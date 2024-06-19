@@ -86,3 +86,4 @@ Welcome to the eCommerce Games Store built with Next.js! This application offers
 - **MongoDB**: NoSQL database for storing data.
 - **RAWG API**: For fetching game data.
 
+---
