@@ -37,7 +37,7 @@ export default function MonthsList({ month, setMonth, status }) {
   return (
     <Segmented
       value={value - 1}
-      className="text-white text-[17px] py-1 relative border-[2px] border-[#36709a] overflow-hidden z-10 bg-[#8c8c8c44] rounded-lg shadow-md before:w-24 before:h-24 before:left-16 before:top-[-70px] before:absolute before:bg-[#b77dc1af] before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-[#2ddcff] after:rounded-full after:-z-10 after:blur-xl after:top-12 after:-right-5 lg:overflow-x-hidden overflow-x-auto"
+      className="text-white text-[17px] py-1 relative border-[2px] border-[#36709a] overflow-hidden z-10 bg-[#8c8c8c44] backdrop-blur-lg rounded-lg shadow-md before:w-24 before:h-24 before:left-16 before:top-[-70px] before:absolute before:bg-[#b77dc1af] before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-[#2ddcff] after:rounded-full after:-z-10 after:blur-xl after:top-12 after:-right-5 lg:overflow-x-hidden overflow-x-auto"
       options={Array.from({ length: 12 }, (e, i) => ({
         label:
           monthName(i + 1)
