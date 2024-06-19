@@ -37,7 +37,7 @@ export default function CategoryCard({
       <Link
         href={`/${category}/${id}`}
         className="text-[25px] duration-300 absolute left-4 top-4 group-hover:left-[95%]
-      group-hover:translate-x-[-100%] hover:opacity-75 font-orbitron font-extrabold text-nowrap z-20"
+      group-hover:translate-x-[-100%] hover:opacity-75 font-orbitron font-extrabold text-nowrap z-30"
       >
         {name}
       </Link>
