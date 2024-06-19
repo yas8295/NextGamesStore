@@ -33,7 +33,6 @@ export default async function handler(req, res) {
         { email: session.user.email },
         { $push: { wishlist: { gameId: game.id } } }
       );
-      console.log(res);
     } catch (error) {
       console.log(error);
       return res.status(500);
