@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import NavBar from "../GamesNavBar/NavBar";
 import MostPopularGamesThisYear from "../MostPopularGamesThisYear/MostPopularGamesThisYear";
+import ScrollTopButton from "@/UI/ScrollTopButton";
 
 export default function Layout({ children, className }) {
   const scrollRef = useRef(null);
@@ -21,10 +22,11 @@ export default function Layout({ children, className }) {
     <div
       className={`${className} max-w-screen max-h-screen overflow-hidden flex`}
     >
+      <ScrollTopButton />
       <SideBar></SideBar>
       <div
         ref={scrollRef}
-        className={`relative flex min-w-[75%] w-[75%] ${
+        className={`games-side relative flex min-w-[75%] w-[75%] ${
           pathName !== "/" && "overflow-auto"
         } grow flex-col overflow-x-hidden min-h-screen`}
       >
