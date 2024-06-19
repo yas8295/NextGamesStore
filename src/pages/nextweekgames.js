@@ -36,6 +36,6 @@ export async function getStaticProps() {
 
   return {
     props: { games },
-    revalidate: 60,
+    
   };
 }
