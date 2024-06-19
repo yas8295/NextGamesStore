@@ -3,10 +3,10 @@ import { Outfit, Orbitron } from "next/font/google";
 import "@/styles/globals.css";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ConfigProvider } from "antd";
 import "react-toastify/dist/ReactToastify.css";
 import Tostify from "@/UI/Toastify";
 import { SessionProvider } from "next-auth/react";
+import AntThemes from "@/styles/antThemes";
 
 const outfit = Outfit({ subsets: ["latin"] });
 const orbitron = Orbitron({
@@ -31,49 +31,12 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>
-        <ConfigProvider
-          theme={{
-            components: {
-              Skeleton: {
-                gradientFromColor: "#2a2a2a9e",
-              },
-              Segmented: {
-                itemHoverBg: "white",
-                colorTextDisabled: "#c5c5c5",
-                itemPadding: "10px",
-                itemActiveBg: "#c5c5c5",
-              },
-              Select: {
-                colorText: "black",
-                colorBorder: "transparent",
-                colorTextPlaceholder: "#c5c5c5",
-                selectorBg: "transparent",
-              },
-              Drawer: {
-                colorIcon: "white",
-                colorText: "white",
-              },
-              Input: {
-                colorTextPlaceholder: "#c5c5c5",
-                fontSizeIcon: "18px",
-              },
-              Empty: {
-                colorTextDescription: "#c5c5c5",
-                opacityImage: "0.4",
-              },
-              Steps: {
-                colorText: "white",
-                colorTextLabel: "white",
-                colorTextDisabled: "rgba(0, 0, 0, 0.25)",
-              },
-            },
-          }}
-        >
+        <AntThemes>
           <Tostify />
           <Layout className={(outfit.className, orbitron.variable)}>
             <Component {...pageProps} />
           </Layout>
-        </ConfigProvider>
+        </AntThemes>
       </QueryClientProvider>
     </SessionProvider>
   );
