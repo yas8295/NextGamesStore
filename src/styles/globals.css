@@ -260,3 +260,8 @@ input {
   align-items: center !important;
   gap: 3px;
 }
+
+.show {
+  scale: 1 !important;
+  opacity: 1 !important;
+}
