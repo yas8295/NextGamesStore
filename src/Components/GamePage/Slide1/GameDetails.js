@@ -19,7 +19,7 @@ export default function GameDetails({ game }) {
         /<h1>{game?.name}</h1>
       </div>
       <div className="flex justify-between items-center gap-3">
-        <h1 className="bg-[#f3f3f3] text-black w-full px-2 py-[1px] rounded-md text-[12px] font-semibold">
+        <h1 className="bg-[#f3f3f3] text-black self-start w-full px-2 py-[1px] rounded-md text-[12px] font-semibold">
           {format(new Date(game.released), "MMM, dd, yyyy")}
         </h1>
         <div className="flex items-center gap-[7px]">
