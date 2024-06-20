@@ -13,7 +13,7 @@ import CheckoutFormButton from "./CheckoutFormButton";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useMutateOrder } from "@/hooks/MongoDB/order/useMutateOrder";
 import { v4 as uuidv4 } from "uuid";
-import { addDays } from "date-fns";
+import { addDays , getTime } from "date-fns";
 
 const stripePromise = async () => {
   try {
@@ -71,7 +71,7 @@ export default function PaymentForm({
         date: Date.now(),
         reference: uuidv4(),
         shippingDetails: shippingDetails,
-        deliveryDate: addDays(new Date(), 2),
+        deliveryDate: getTime(addDays(new Date(), 2)),
         status: "pending",
       };
 
