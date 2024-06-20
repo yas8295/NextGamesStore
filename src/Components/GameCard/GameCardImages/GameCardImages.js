@@ -63,14 +63,10 @@ export default function GameCardImages({ layOut, images, id, name, rating }) {
         {images?.length !== 0 ? (
           images?.map((image) => (
             <Image
-              width={800}
-              height={800}
               key={image.image}
               src={image.image}
-              loading="lazy"
-              placeholder="blur"
+              blurDataURL=""
               alt={name}
-              blurDataURL="media.rawg.io"
               className={`w-full object-top duration-500 transition-all hover:scale-110 hover:rotate-3 saturate-50 hover:saturate-200 ${
                 layOut
                   ? "md:h-[400px] h-[250px] object-cover"
@@ -80,7 +76,6 @@ export default function GameCardImages({ layOut, images, id, name, rating }) {
           ))
         ) : (
           <Skeleton.Image
-            blurDataURL="media.rawg.io"
             className={`p-5 ${
               layOut
                 ? "max-h-96 h-96 object-fill"
