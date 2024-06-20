@@ -16,12 +16,16 @@ export default function OrderView({ order, ordersCount }) {
 
   const { mutate, isLoading } = useMutateOrder();
 
-  if (
+  useEffect(() => {
+    if (
     (order?.status === "pending" && isPast(new Date(order?.deliveryDate))) ||
     (order?.status === "pending" && isToday(new Date(order?.deliveryDate)))
   ) {
     mutate({ order: order, method: "PUT" });
-  }
+    }
+}, []);
+
+
 
   if (isLoading) {
     return (
