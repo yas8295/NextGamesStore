@@ -37,13 +37,6 @@ export default function OrderView({ order, ordersCount }) {
     }
   }, [order, mutate]);
 
-  if (
-    (order.status === "pending" && (isPast(parsedDate) || isToday(parsedDate)))
-  ) {
-    mutate({ order: order, method: "PUT" });
-  }
-}, [order]);
-
   if (isLoading || !order || typeof order.deliveryDate === 'undefined') {
     return (
       <div className="w-full h-full flex justify-center items-center">
