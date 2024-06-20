@@ -31,8 +31,6 @@ export default function SmallScreenSlide({
           } duration-500 border-[3px] border-color-[white]`}
           src={image.image || game.background_image}
           alt={game.name}
-          fill
-          blurDataURL=""
         ></Image>
       ))}
     </motion.div>
