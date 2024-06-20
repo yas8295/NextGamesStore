@@ -31,8 +31,8 @@ export default function SmallScreenSlide({
           } duration-500 border-[3px] border-color-[white]`}
           src={image.image || game.background_image}
           alt={game.name}
-          width={400}
-          height={400}
+          width={50}
+          height={50}
         ></Image>
       ))}
     </motion.div>
