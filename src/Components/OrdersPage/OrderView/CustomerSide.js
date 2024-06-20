@@ -42,7 +42,7 @@ export default function CustomerSide({ order, ordersCount }) {
             <span>{status !== "loading" && username?.[1][0]}</span>
           </h1>
         </Avatar>
-        {status !== "loading" && username[0]} {username[1]}
+         {status !== "loading" && `${username[0]} ${username[1]}`}
       </h1>
       <h1 className="capitalize flex justify-between items-center gap-2 font-semibold text-[19px] ms-2">
         <div className="flex items-center gap-2">
