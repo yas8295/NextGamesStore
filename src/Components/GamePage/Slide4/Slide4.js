@@ -36,8 +36,7 @@ export default function Slide4({ game, screenShots }) {
             game.background_image
           }
           alt={game.name}
-          width={600}
-          height={600}
+          blurDataURL=""
         ></Image>
       }
       {!isLoading ? (

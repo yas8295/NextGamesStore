@@ -18,8 +18,7 @@ export default function Slide3({ game, screenShots }) {
         className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
         src={screenShots?.results?.[1]?.image || game.background_image}
         alt={game.name}
-        width={600}
-        height={600}
+        blurDataURL=""
       ></Image>
       <div className="game-description flex items-center self-center gap-3 flex-wrap overflow-auto">
         {data?.data?.results.length ? (
@@ -36,11 +35,7 @@ export default function Slide3({ game, screenShots }) {
                 className="w-16 h-16 object-cover rounded-xl hover:scale-110 duration-300"
                 src={achievement?.image}
                 alt={game.name}
-                width={200}
-                height={200}
-                loading="lazy"
-                blurDataURL="media.rawg.io"
-                placeholder="blur"
+                blurDataURL=""
               ></Image>
               <section className="block border-l border-gray-300 m-3">
                 <div className="pl-3">

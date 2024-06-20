@@ -30,8 +30,7 @@ export default function WideScreenSlide({
           } hover:brightness-[100%] duration-500`}
           src={image.image || game.background_image}
           alt={game.name}
-          width={400}
-          height={400}
+          blurDataURL=""
           style={{
             clipPath: `polygon(${
               i === 0 ? "10%" : "35%"

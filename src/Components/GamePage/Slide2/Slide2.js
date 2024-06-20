@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { motion } from "framer-motion";
 import SlideHeading from "../SlideHeading";
+import Image from "next/image";
 
 export default function Slide2({ game, screenShots }) {
   const { push } = useRouter();
@@ -13,11 +14,12 @@ export default function Slide2({ game, screenShots }) {
   return (
     <div className="h-full w-full flex flex-col md:gap-4 gap-2 snap-start relative lg:p-8 p-1 font-orbitron overflow-hidden">
       <SlideHeading title={game.name} />
-      <img
+      <Image
         className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
         src={screenShots?.results?.[0]?.image || game.background_image}
         alt={game.name}
-      ></img>
+        blurDataURL=""
+      ></Image>
       <motion.div
         initial={{ opacity: 0, y: "100%" }}
         whileInView={{ opacity: 1, y: 0 }}
