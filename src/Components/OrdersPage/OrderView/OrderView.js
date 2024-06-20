@@ -17,11 +17,6 @@ export default function OrderView({ order, ordersCount }) {
   const { mutate, isLoading } = useMutateOrder();
 
   useEffect(() => {
-    if (!order || typeof order.deliveryDate === 'undefined') {
-      console.error("Order or deliveryDate is undefined");
-      return;
-    }
-
     const deliveryDateMillis = order.deliveryDate;
 
     const parsedDate = new Date(deliveryDateMillis);
