@@ -11,28 +11,20 @@ import { useMutateOrder } from "@/hooks/MongoDB/order/useMutateOrder";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useSession } from "next-auth/react";
 
-export default function OrderView({ order, ordersCount }) {
+export default function OrderView({ order, ordersCount, deliveryDate }) {
   const { data: session } = useSession();
 
   const { mutate, isLoading } = useMutateOrder();
 
   useEffect(() => {
-    const deliveryDateMillis = order.deliveryDate;
-
-    const parsedDate = new Date(deliveryDateMillis);
-    if (isNaN(parsedDate.getTime())) {
-      console.error("Invalid date:", deliveryDateMillis);
-      return;
-    }
-
     if (
-      order.status === "pending" && (isPast(parsedDate) || isToday(parsedDate))
+      order.status === "pending" && (isPast(deliveryDate) || isToday(deliveryDate))
     ) {
       mutate({ order: order, method: "PUT" });
     }
   }, [order, mutate]);
 
-  if (isLoading || !order || typeof order.deliveryDate === 'undefined') {
+  if (isLoading) {
     return (
       <div className="w-full h-full flex justify-center items-center">
         <LoadingOutlined className="text-[40px] text-[#3aadeb] my-7" />
