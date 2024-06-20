@@ -17,13 +17,20 @@ export default function OrderView({ order, ordersCount }) {
   const { mutate, isLoading } = useMutateOrder();
 
   useEffect(() => {
-    if (
-    (order.status === "pending" && isPast(new Date(order.deliveryDate))) ||
-    (order.status === "pending" && isToday(new Date(order.deliveryDate)))
+    const deliveryDateMillis = order.deliveryDate;
+
+  const parsedDate = new Date(deliveryDateMillis);
+  if (isNaN(parsedDate.getTime())) {
+    console.error("Invalid date:", deliveryDateMillis);
+    return;
+  }
+
+  if (
+    (order.status === "pending" && (isPast(parsedDate) || isToday(parsedDate)))
   ) {
     mutate({ order: order, method: "PUT" });
-    }
-}, []);
+  }
+}, [order]);
 
   if (isLoading) {
     return (
