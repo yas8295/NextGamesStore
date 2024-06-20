@@ -2,7 +2,7 @@ import ConfirmedOrderReview from "@/Components/Checkout/ConfirmedOrderReview/Con
 import { Tag } from "antd";
 import { format, isPast, isToday } from "date-fns";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { SlCalender } from "react-icons/sl";
 import CustomerSide from "./CustomerSide";
 import { CiDeliveryTruck } from "react-icons/ci";
