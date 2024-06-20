@@ -19,7 +19,11 @@ const mutateOrder = async (order, method) => {
   }
 };
 
-export const useMutateOrder = (setStep = undefined, cancel = undefined) => {
+export const useMutateOrder = (
+  setStep = undefined,
+  cancel = undefined,
+  setStatus = undefined
+) => {
   const { push } = useRouter();
 
   const { mutate, isLoading } = useMutation({
@@ -28,6 +32,7 @@ export const useMutateOrder = (setStep = undefined, cancel = undefined) => {
       toast.success(() => message);
       setStep && setStep(2);
       cancel && push("/orders");
+      setStatus && setStatus("delivered");
     },
     onError: (error) => {
       toast.error(
