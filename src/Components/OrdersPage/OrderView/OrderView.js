@@ -17,13 +17,25 @@ export default function OrderView({ order, ordersCount }) {
   const { mutate, isLoading } = useMutateOrder();
 
   useEffect(() => {
+    if (!order || typeof order.deliveryDate === 'undefined') {
+      console.error("Order or deliveryDate is undefined");
+      return;
+    }
+
     const deliveryDateMillis = order.deliveryDate;
 
-  const parsedDate = new Date(deliveryDateMillis);
-  if (isNaN(parsedDate.getTime())) {
-    console.error("Invalid date:", deliveryDateMillis);
-    return;
-  }
+    const parsedDate = new Date(deliveryDateMillis);
+    if (isNaN(parsedDate.getTime())) {
+      console.error("Invalid date:", deliveryDateMillis);
+      return;
+    }
+
+    if (
+      order.status === "pending" && (isPast(parsedDate) || isToday(parsedDate))
+    ) {
+      mutate({ order: order, method: "PUT" });
+    }
+  }, [order, mutate]);
 
   if (
     (order.status === "pending" && (isPast(parsedDate) || isToday(parsedDate)))
@@ -32,7 +44,7 @@ export default function OrderView({ order, ordersCount }) {
   }
 }, [order]);
 
-  if (isLoading) {
+  if (isLoading || !order || typeof order.deliveryDate === 'undefined') {
     return (
       <div className="w-full h-full flex justify-center items-center">
         <LoadingOutlined className="text-[40px] text-[#3aadeb] my-7" />
