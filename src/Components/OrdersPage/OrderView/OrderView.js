@@ -11,7 +11,7 @@ import { useMutateOrder } from "@/hooks/MongoDB/order/useMutateOrder";
 import { LoadingOutlined } from "@ant-design/icons";
 
 export default function OrderView({ order, ordersCount }) {
-  const [status, setStatus] = useState(order?.status === "pending" ? "pending": "delivered");
+  const [status, setStatus] = useState(order?.status);
   const { mutate, isLoading } = useMutateOrder(undefined, undefined, setStatus);
 
   useEffect(() => {
