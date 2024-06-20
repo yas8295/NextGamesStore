@@ -31,6 +31,7 @@ export default function SmallScreenSlide({
           } duration-500 border-[3px] border-color-[white]`}
           src={image.image || game.background_image}
           alt={game.name}
+          unoptimized={true}
         ></Image>
       ))}
     </motion.div>
