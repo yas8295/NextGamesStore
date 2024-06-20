@@ -24,7 +24,6 @@ export default function SmallScreenSlide({
             );
           }}
           key={image.id}
-          priority
           className={`min-w-[150px] h-full cursor-pointer object-cover z-10 ${
             selectImage === image.image
               ? "brightness-[100%]"
@@ -34,7 +33,6 @@ export default function SmallScreenSlide({
           alt={game.name}
           width={400}
           height={400}
-          blurDataURL="media.rawg.io"
         ></Image>
       ))}
     </motion.div>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { LoadingOutlined } from "@ant-design/icons";
 
 export default function GamePage({ game }) {
-  const { data, isLoading } = useGetGameScreenShots(game?.id);
+  const { data, isLoading } = useGetGameScreenShots(game.id);
   const scrollRef = useRef(null);
   const pathName = usePathname();
 

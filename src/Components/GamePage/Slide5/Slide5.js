@@ -26,7 +26,6 @@ export default function Slide5({ game, screenShots }) {
     <div className="h-fit min-h-screen w-full flex flex-col justify-between md:gap-4 gap-2 snap-start relative lg:p-3 p-2 font-orbitron">
       <SlideHeading title="games you may like" />
       <Image
-        priority
         className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
         src={
           screenShots?.results?.[4]?.image ||
@@ -36,8 +35,6 @@ export default function Slide5({ game, screenShots }) {
         alt={game.name}
         width={600}
         height={600}
-        blurDataURL="media.rawg.io"
-        placeholder="blur"
       ></Image>
       {!isLoading ? (
         <Swiper

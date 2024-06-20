@@ -29,7 +29,6 @@ export default function Slide4({ game, screenShots }) {
       <SlideHeading title={`Series of ${game.name}`} />
       {
         <Image
-          priority
           className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
           src={
             screenShots?.results?.[3]?.image ||
@@ -39,8 +38,6 @@ export default function Slide4({ game, screenShots }) {
           alt={game.name}
           width={600}
           height={600}
-          blurDataURL="media.rawg.io"
-          placeholder="blur"
         ></Image>
       }
       {!isLoading ? (

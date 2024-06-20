@@ -15,14 +15,11 @@ export default function Slide2({ game, screenShots }) {
     <div className="h-full w-full flex flex-col md:gap-4 gap-2 snap-start relative lg:p-8 p-1 font-orbitron overflow-hidden">
       <SlideHeading title={game.name} />
       <Image
-        priority
         className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
         src={screenShots?.results?.[0]?.image || game.background_image}
         alt={game.name}
         width={600}
         height={600}
-        blurDataURL="media.rawg.io"
-        placeholder="blur"
       ></Image>
       <motion.div
         initial={{ opacity: 0, y: "100%" }}

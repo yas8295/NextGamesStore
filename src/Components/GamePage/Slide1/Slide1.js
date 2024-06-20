@@ -38,13 +38,11 @@ export default function Slide1({
             setSelectImage={setSelectImage}
           />
           <Image
-            priority
             className="absolute top-0 left-0 w-full h-full md:rounded-l-3xl rounded-t-3xl z-[-1] object-cover brightness-[65%]"
             src={selectImage || game.background_image}
             alt={game.name}
             width={1000}
             height={1000}
-            blurDataURL="media.rawg.io"
           ></Image>
         </div>
       </div>

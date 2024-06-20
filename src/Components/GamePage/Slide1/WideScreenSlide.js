@@ -23,7 +23,6 @@ export default function WideScreenSlide({
             );
           }}
           key={image.id}
-          priority
           className={`w-full h-[20%] grow cursor-pointer object-cover z-10 ${
             selectImage === image.image
               ? "brightness-[100%]"
@@ -33,8 +32,6 @@ export default function WideScreenSlide({
           alt={game.name}
           width={400}
           height={400}
-          loading="eager"
-          blurDataURL="media.rawg.io"
           style={{
             clipPath: `polygon(${
               i === 0 ? "10%" : "35%"

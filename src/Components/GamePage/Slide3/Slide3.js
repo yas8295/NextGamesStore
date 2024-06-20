@@ -15,14 +15,11 @@ export default function Slide3({ game, screenShots }) {
         <TfiCup className="md:text-[75px] text-[50px]" />
       </h1>
       <Image
-        priority
         className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
         src={screenShots?.results?.[1]?.image || game.background_image}
         alt={game.name}
         width={600}
         height={600}
-        blurDataURL="media.rawg.io"
-        placeholder="blur"
       ></Image>
       <div className="game-description flex items-center self-center gap-3 flex-wrap overflow-auto">
         {data?.data?.results.length ? (
