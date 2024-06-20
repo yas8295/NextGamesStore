@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [{ hostname: "media.rawg.io" }],
+    unoptimized: true,
   },
-  
   transpilePackages: [
     "antd",
     "@ant-design/plots",
