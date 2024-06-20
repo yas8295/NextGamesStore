@@ -2,29 +2,28 @@ import ConfirmedOrderReview from "@/Components/Checkout/ConfirmedOrderReview/Con
 import { Tag } from "antd";
 import { format, isPast, isToday } from "date-fns";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SlCalender } from "react-icons/sl";
 import CustomerSide from "./CustomerSide";
 import { CiDeliveryTruck } from "react-icons/ci";
 import CancelOrderButton from "./CancelOrderButton";
 import { useMutateOrder } from "@/hooks/MongoDB/order/useMutateOrder";
 import { LoadingOutlined } from "@ant-design/icons";
-import { useSession } from "next-auth/react";
 
-export default function OrderView({ order, ordersCount, deliveryDate }) {
-  const { data: session } = useSession();
-
-  const { mutate, isLoading } = useMutateOrder();
+export default function OrderView({ order, ordersCount }) {
+  const [status, setStatus] = useState(order.status);
+  const { mutate, isLoading } = useMutateOrder(undefined, undefined, setStatus);
 
   useEffect(() => {
     if (
-      order.status === "pending" && (isPast(deliveryDate) || isToday(deliveryDate))
+      (order?.status === "pending" && isPast(new Date(order?.deliveryDate))) ||
+      (order?.status === "pending" && isToday(new Date(order?.deliveryDate)))
     ) {
       mutate({ order: order, method: "PUT" });
     }
-  }, [order, mutate]);
+  }, []);
 
-  if (isLoading) {
+  if (isLoading || !order) {
     return (
       <div className="w-full h-full flex justify-center items-center">
         <LoadingOutlined className="text-[40px] text-[#3aadeb] my-7" />
@@ -65,21 +64,19 @@ export default function OrderView({ order, ordersCount, deliveryDate }) {
           <div className="flex justify-between gap-2 items-center flex-wrap">
             <div className="flex items-center gap-2">
               <Tag
-                color={`${order?.status === "pending" ? "#efe40f" : "#1db543"}`}
+                color={`${status === "pending" ? "#efe40f" : "#1db543"}`}
                 className="md:text-[19px] text-[16px] text-[black!important] font-semibold p-2 md:px-7 px-4"
               >
-                {order?.status === "pending" ? "Pending" : "Delivered"}
+                {status === "pending" ? "Pending" : "Delivered"}
               </Tag>
               <h1>|</h1>
               <h1 className="ms-3 flex md:text-[22px] text-[16px] items-center gap-2">
                 <CiDeliveryTruck className="md:text-[28px] text-[25px]" />
-                {order?.status === "pending"
-                  ? "Delivery date"
-                  : "Delivered on"}{" "}
-                : {format(new Date(order?.deliveryDate), "dd MMM, yy")}
+                {status === "pending" ? "Delivery date" : "Delivered on"} :{" "}
+                {format(new Date(order?.deliveryDate), "dd MMM, yy")}
               </h1>
             </div>
-            {order?.status === "pending" && <CancelOrderButton order={order} />}
+            {status === "pending" && <CancelOrderButton order={order} />}
           </div>
         </div>
         <CustomerSide order={order} ordersCount={ordersCount} />
