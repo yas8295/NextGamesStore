@@ -17,8 +17,10 @@ export default function Order({ order }) {
   }
 
   const ordersCount = orders?.orders?.orders?.length;
+  const deliveryDateMillis = order?.deliveryDate;
+  const parsedDate = new Date(deliveryDateMillis);
 
-  return <OrderView order={order} ordersCount={ordersCount} />;
+  return <OrderView order={order} ordersCount={ordersCount} deliveryDate={parsedDate} />;
 }
 
 export async function getStaticProps({ params }) {
