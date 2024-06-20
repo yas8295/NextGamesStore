@@ -17,7 +17,7 @@ export default function Slide1({
         className="absolute top-0 left-0 w-full h-full blur-[3px] opacity-80 z-[-1] object-cover"
         src={selectImage || game.background_image}
         alt={game.name}
-        blurDataURL=""
+        blurDataURL="media.rawg.io"
       ></Image>
       <div className="w-full h-full md:rounded-l-3xl md:rounded-r-none rounded-t-3xl bg-[#ffffff4c] backdrop-blur-xl border">
         <div className="h-full w-full relative md:rounded-l-3xl rounded-t-3xl">
@@ -38,8 +38,8 @@ export default function Slide1({
             className="absolute top-0 left-0 w-full h-full md:rounded-l-3xl rounded-t-3xl z-[-1] object-cover brightness-[65%]"
             src={selectImage || game.background_image}
             alt={game.name}
-            width={"100%"}
-            height={"100%"}
+            width={700}
+            height={700}
             blurDataURL="media.rawg.io"
           ></Image>
         </div>
