@@ -65,7 +65,10 @@ export default function GameCardImages({ layOut, images, id, name, rating }) {
             <Image
               key={image.image}
               src={image.image}
-              blurDataURL=""
+              width={"100%"}
+              height={"100%"}
+              unoptimized={false}
+              blurDataURL="media.rawg.io"
               alt={name}
               className={`w-full object-top duration-500 transition-all hover:scale-110 hover:rotate-3 saturate-50 hover:saturate-200 ${
                 layOut

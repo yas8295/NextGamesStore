@@ -36,7 +36,9 @@ export default function Slide4({ game, screenShots }) {
             game.background_image
           }
           alt={game.name}
-          blurDataURL=""
+          width={"100%"}
+          height={"100%"}
+          blurDataURL="media.rawg.io"
         ></Image>
       }
       {!isLoading ? (

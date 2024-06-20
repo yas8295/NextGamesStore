@@ -18,12 +18,10 @@ export default function CategoryCard({
     >
       <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-b duration-1000 group-hover:opacity-100 opacity-80 from-[#0000007b] to-[#131313] group-hover:backdrop-blur-[2.5px] z-[1]"></div>
       <Image
-        width={500}
-        height={500}
-        loading="lazy"
-        placeholder="blur"
-        alt={`${name}`}
+        width={"100%"}
+        height={"100%"}
         blurDataURL="media.rawg.io"
+        alt={`${name}`}
         className="absolute w-full h-full object-cover"
         src={image}
       />

@@ -38,7 +38,9 @@ export default function Slide1({
             className="absolute top-0 left-0 w-full h-full md:rounded-l-3xl rounded-t-3xl z-[-1] object-cover brightness-[65%]"
             src={selectImage || game.background_image}
             alt={game.name}
-            blurDataURL=""
+            width={"100%"}
+            height={"100%"}
+            blurDataURL="media.rawg.io"
           ></Image>
         </div>
       </div>

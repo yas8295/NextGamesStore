@@ -35,7 +35,9 @@ export default function Slide3({ game, screenShots }) {
                 className="w-16 h-16 object-cover rounded-xl hover:scale-110 duration-300"
                 src={achievement?.image}
                 alt={game.name}
-                blurDataURL=""
+                width={"100%"}
+                height={"100%"}
+                blurDataURL="media.rawg.io"
               ></Image>
               <section className="block border-l border-gray-300 m-3">
                 <div className="pl-3">

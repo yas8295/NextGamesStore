@@ -30,6 +30,9 @@ export default function WideScreenSlide({
           } hover:brightness-[100%] duration-500`}
           src={image.image || game.background_image}
           alt={game.name}
+          width={"100%"}
+          height={"100%"}
+          blurDataURL="media.rawg.io"
           style={{
             clipPath: `polygon(${
               i === 0 ? "10%" : "35%"

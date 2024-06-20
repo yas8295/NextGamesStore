@@ -18,7 +18,9 @@ export default function Slide2({ game, screenShots }) {
         className="absolute top-0 left-0 w-full h-full z-[-1] object-cover brightness-75"
         src={screenShots?.results?.[0]?.image || game.background_image}
         alt={game.name}
-        blurDataURL=""
+        width={"100%"}
+        height={"100%"}
+        blurDataURL="media.rawg.io"
       ></Image>
       <motion.div
         initial={{ opacity: 0, y: "100%" }}
