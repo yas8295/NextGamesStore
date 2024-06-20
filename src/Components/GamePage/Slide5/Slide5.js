@@ -33,8 +33,8 @@ export default function Slide5({ game, screenShots }) {
           game.background_image
         }
         alt={game.name}
-        width={"100%"}
-        height={"100%"}
+        width={1200}
+        height={1200}
         blurDataURL="media.rawg.io"
       ></Image>
       {!isLoading ? (

@@ -31,8 +31,8 @@ export default function SmallScreenSlide({
           } duration-500 border-[3px] border-color-[white]`}
           src={image.image || game.background_image}
           alt={game.name}
-          width={"100%"}
-          height={"100%"}
+          width={150}
+          height={150}
           blurDataURL="media.rawg.io"
         ></Image>
       ))}
