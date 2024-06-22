@@ -3,14 +3,11 @@ import { useGetOrders } from "@/hooks/MongoDB/order/useGetOrders";
 import React from "react";
 import { LoadingOutlined } from "@ant-design/icons";
 import MongoDB from "@/MongoDB/MongoDB";
-import { useRouter } from "next/router";
 
 export default function Order({ order }) {
-  const router = useRouter();
-
   const { data: orders, isLoading } = useGetOrders();
 
-  if (isLoading || router.isFallback) {
+  if (isLoading) {
     <div className="w-full h-full flex justify-center items-center">
       <LoadingOutlined className="text-[40px] text-[#3aadeb] my-7" />
     </div>;
@@ -23,7 +20,7 @@ export default function Order({ order }) {
   return <OrderView order={order} ordersCount={ordersCount} deliveryDate={parsedDate} />;
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const client = MongoDB();
 
   try {
@@ -62,9 +59,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true,
-  };
-};
+
